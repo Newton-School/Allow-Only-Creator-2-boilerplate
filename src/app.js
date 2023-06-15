@@ -67,7 +67,7 @@ app.post("/api/v1/discussions", (req, res) => {
 
 });
 
-app.patch("/api/v1/discussions/:id", isOwner(),  (req, res) => {
+app.patch("/api/v1/discussions/:id", isOwner,  (req, res) => {
 
   const id = req.params.id * 1;
   const updatedDetails = discussions.find(
@@ -98,7 +98,7 @@ app.patch("/api/v1/discussions/:id", isOwner(),  (req, res) => {
 });
 
 
-app.delete("/api/v1/discussions/:id", isOwner(), (req, res) => {
+app.delete("/api/v1/discussions/:id", isOwner, (req, res) => {
   const id = req.params.id * 1;
   const DetailToDelete = discussions.find(
     (detailTODelete) => detailTODelete.id === id
